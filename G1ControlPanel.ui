@@ -1,0 +1,3084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>G1ControlPanel</class>
+ <widget class="QMainWindow" name="G1ControlPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1265</width>
+    <height>519</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>G1 Control Panel</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="leftMargin">
+     <number>40</number>
+    </property>
+    <property name="topMargin">
+     <number>30</number>
+    </property>
+    <property name="rightMargin">
+     <number>40</number>
+    </property>
+    <property name="bottomMargin">
+     <number>30</number>
+    </property>
+    <item row="3" column="2">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="4" column="1">
+     <spacer name="verticalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="labelArms">
+          <property name="font">
+           <font>
+            <family>.AppleSystemUIFont</family>
+            <pointsize>13</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Arms</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+          </property>
+          <property name="margin">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutArms">
+          <property name="spacing">
+           <number>-1</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutLeftArm">
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutLeftShoulder">
+              <property name="bottomMargin">
+               <number>30</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelLeftShoulder">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Left Shoulder</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutLeftShoulder">
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelLeftShoulderPitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftShoulderPitch" stretch="0,0">
+                  <property name="spacing">
+                   <number>-1</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="labelLeftShoulderPitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftShoulderPitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="mouseTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="specialValueText">
+                     <string/>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelLeftShoulderRoll">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Roll</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftShoulderRoll">
+                  <item>
+                   <widget class="QLabel" name="labelLeftShoulderRollValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftShoulderRoll">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="labelLeftShoulderYaw">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Yaw</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftShoulderYaw">
+                  <item>
+                   <widget class="QLabel" name="labelLeftShoulderYawValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftShoulderYaw">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutLeftElbow">
+              <property name="bottomMargin">
+               <number>30</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelLeftElbow">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Left Elbow</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutLeftElbow">
+                <property name="labelAlignment">
+                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelLeftElbowPitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftElbowPitch">
+                  <item>
+                   <widget class="QLabel" name="labelLeftElbowPitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftElbowPitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutLeftWrist">
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelLeftWrist">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Left Wrist</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutLeftWrist">
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelLeftWristPitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                  <property name="indent">
+                   <number>-1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelLeftWristRoll">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Roll</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="labelLeftWristYaw">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Yaw</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftWristPitch">
+                  <item>
+                   <widget class="QLabel" name="labelLeftWristPitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftWristPitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>13</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftWristRoll">
+                  <item>
+                   <widget class="QLabel" name="labelLeftWristRollValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftWristRoll">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftWristYaw">
+                  <item>
+                   <widget class="QLabel" name="labelLeftWristYawValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftWristYaw">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line">
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Sunken</enum>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutRightArm">
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutRightShoulder">
+              <property name="bottomMargin">
+               <number>30</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelRightShoulder">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Right Shoulder</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutRightShoulder">
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelRightShoulderPitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelRightShoulderRoll">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Roll</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="labelRightShoulderYaw">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Yaw</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightShoulderPitch">
+                  <item>
+                   <widget class="QLabel" name="labelRightShoulderPitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightShoulderPitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightShoulderRoll">
+                  <item>
+                   <widget class="QLabel" name="labelRightShoulderRollValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightShoulderRoll">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightShoulderYaw">
+                  <item>
+                   <widget class="QLabel" name="labelRightShoulderYawValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightShoulderYaw">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutRightElbow">
+              <property name="bottomMargin">
+               <number>30</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelRightElbow">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Right Elbow</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutRightElbow">
+                <property name="labelAlignment">
+                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelRightElbowPitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightElbowPitch">
+                  <item>
+                   <widget class="QLabel" name="labelRightElbowPitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightElbowPitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutRightWrist">
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelRightWrist">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Right Wrist</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutRightWrist">
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelRightWristPitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelRightWristRoll">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Roll</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="labelRightWristYaw">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Yaw</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightWristPitch">
+                  <item>
+                   <widget class="QLabel" name="labelRightWristPitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightWristPitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightWristRoll">
+                  <item>
+                   <widget class="QLabel" name="labelRightWristRollValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightWristRoll">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightWristYaw">
+                  <item>
+                   <widget class="QLabel" name="labelRightWristYawValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightWristYaw">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutWaistReadOnly">
+        <property name="leftMargin">
+         <number>30</number>
+        </property>
+        <property name="rightMargin">
+         <number>30</number>
+        </property>
+        <item>
+         <widget class="QRadioButton" name="radioButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>.AppleSystemUIFont</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LayoutDirection::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Read Only</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="font">
+           <font>
+            <family>.AppleSystemUIFont</family>
+           </font>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutWaist">
+          <item>
+           <widget class="Line" name="line_4">
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Sunken</enum>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutWaist">
+            <property name="leftMargin">
+             <number>30</number>
+            </property>
+            <property name="rightMargin">
+             <number>30</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="labelWaist">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>.AppleSystemUIFont</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Waist</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QFormLayout" name="formLayoutWaist">
+              <property name="formAlignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+              <item row="0" column="0">
+               <widget class="QLabel" name="labelWaistPitch">
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Pitch</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <layout class="QHBoxLayout" name="horizontalLayoutWaistPitch">
+                <item>
+                 <widget class="QLabel" name="labelWaistPitchValue">
+                  <property name="minimumSize">
+                   <size>
+                    <width>60</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>60</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBoxWaistPitch">
+                  <property name="minimumSize">
+                   <size>
+                    <width>60</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>60</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="readOnly">
+                   <bool>false</bool>
+                  </property>
+                  <property name="buttonSymbols">
+                   <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
+                  </property>
+                  <property name="accelerated">
+                   <bool>false</bool>
+                  </property>
+                  <property name="keyboardTracking">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimum">
+                   <number>-999</number>
+                  </property>
+                  <property name="maximum">
+                   <number>999</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="labelWaistRoll">
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Roll</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <layout class="QHBoxLayout" name="horizontalLayoutWaistRoll">
+                <item>
+                 <widget class="QLabel" name="labelWaistRollValue">
+                  <property name="minimumSize">
+                   <size>
+                    <width>60</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>60</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBoxWaistRoll">
+                  <property name="minimumSize">
+                   <size>
+                    <width>60</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>60</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="readOnly">
+                   <bool>false</bool>
+                  </property>
+                  <property name="keyboardTracking">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimum">
+                   <number>-999</number>
+                  </property>
+                  <property name="maximum">
+                   <number>999</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="labelWaistYaw">
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Yaw</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <layout class="QHBoxLayout" name="horizontalLayoutWaistYaw">
+                <item>
+                 <widget class="QLabel" name="labelWaistYawValue">
+                  <property name="minimumSize">
+                   <size>
+                    <width>60</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>60</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBoxWaistYaw">
+                  <property name="minimumSize">
+                   <size>
+                    <width>60</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>60</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="readOnly">
+                   <bool>false</bool>
+                  </property>
+                  <property name="keyboardTracking">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimum">
+                   <number>-999</number>
+                  </property>
+                  <property name="maximum">
+                   <number>999</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_3">
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Sunken</enum>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="font">
+           <font>
+            <family>.AppleSystemUIFont</family>
+           </font>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="font">
+           <font>
+            <family>.AppleSystemUIFont</family>
+           </font>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutLegs">
+        <item>
+         <widget class="QLabel" name="labelLegs">
+          <property name="font">
+           <font>
+            <family>.AppleSystemUIFont</family>
+            <pointsize>13</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Legs</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+          </property>
+          <property name="margin">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutLegs">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutLeftLeg">
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutLeftHip">
+              <property name="bottomMargin">
+               <number>30</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelLeftHip">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Left Hip</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutLeftHip">
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelLeftHipPitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftHipPitch">
+                  <item>
+                   <widget class="QLabel" name="labelLeftHipPitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftHipPitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-144</number>
+                    </property>
+                    <property name="maximum">
+                     <number>165</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelLeftHipRoll">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Roll</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftHipRoll">
+                  <item>
+                   <widget class="QLabel" name="labelLeftHipRollValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftHipRoll">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-30</number>
+                    </property>
+                    <property name="maximum">
+                     <number>170</number>
+                    </property>
+                    <property name="value">
+                     <number>0</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="labelLeftHipYaw">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Yaw</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftHipYaw">
+                  <item>
+                   <widget class="QLabel" name="labelLeftHipYawValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftHipYaw">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-157</number>
+                    </property>
+                    <property name="maximum">
+                     <number>157</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutLeftKnee">
+              <property name="bottomMargin">
+               <number>30</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelLeftKnee">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Left Knee</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutLeftKnee">
+                <property name="labelAlignment">
+                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelLeftKneePitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftKneePitch">
+                  <item>
+                   <widget class="QLabel" name="labelLeftKneePitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftKneePitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutLeftAnkle">
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelLeftAnkle">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Left Ankle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutLeftAnkle">
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelLeftAnklePitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftAnklePitch">
+                  <item>
+                   <widget class="QLabel" name="labelLeftAnklePitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftAnklePitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelLeftAnkleRoll">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Roll</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutLeftAnkleRoll">
+                  <item>
+                   <widget class="QLabel" name="labelLeftAnkleRollValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxLeftAnkleRoll">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_2">
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Sunken</enum>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutRightLeg">
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutRightHip">
+              <property name="bottomMargin">
+               <number>30</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelRightHip">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Right Hip</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutRightHip">
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelRightHipPitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelRightHipRoll">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Roll</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="labelRightHipYaw">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Yaw</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightHipPitch">
+                  <item>
+                   <widget class="QLabel" name="labelRightHipPitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightHipPitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightHipRoll">
+                  <item>
+                   <widget class="QLabel" name="labelRightHipRollValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightHipRoll">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightHipYaw">
+                  <item>
+                   <widget class="QLabel" name="labelRightHipYawValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightHipYaw">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutRightKnee">
+              <property name="bottomMargin">
+               <number>30</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelRightKnee">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Right Knee</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutRightKnee">
+                <property name="labelAlignment">
+                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelRightKneePitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightKneePitch">
+                  <item>
+                   <widget class="QLabel" name="labelRightKneePitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightKneePitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutRightAnkle">
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelRightAnkle">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>.AppleSystemUIFont</family>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Right Ankle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayoutRightAnkle">
+                <property name="formAlignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelRightAnklePitch">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pitch</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightAnklePitch">
+                  <item>
+                   <widget class="QLabel" name="labelRightAnklePitchValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightAnklePitch">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelRightAnkleRoll">
+                  <property name="font">
+                   <font>
+                    <family>.AppleSystemUIFont</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Roll</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayoutRightAnkleRoll">
+                  <item>
+                   <widget class="QLabel" name="labelRightAnkleRollValue">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxRightAnkleRoll">
+                    <property name="minimumSize">
+                     <size>
+                      <width>60</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>60</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>.AppleSystemUIFont</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="readOnly">
+                     <bool>false</bool>
+                    </property>
+                    <property name="keyboardTracking">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-999</number>
+                    </property>
+                    <property name="maximum">
+                     <number>999</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <spacer name="verticalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
