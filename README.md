@@ -8,7 +8,6 @@
 pip install PySide6
 sudo apt update
 sudo apt install libxcb-cursor0
-
 ````
 
 ## Run
