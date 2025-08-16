@@ -13,5 +13,5 @@ sudo apt install libxcb-cursor0
 
 ## Run
 ````
-python3 main
+python3 main.py
 ````
