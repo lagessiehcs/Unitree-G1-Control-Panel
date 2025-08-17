@@ -12,5 +12,6 @@ sudo apt install libxcb-cursor0
 
 ## Run
 ````
+pyside6-uic G1ControlPanel.ui -o G1ControlPanel.py
 python3 main.py
 ````

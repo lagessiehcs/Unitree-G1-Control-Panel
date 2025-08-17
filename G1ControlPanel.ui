@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1265</width>
-    <height>519</height>
+    <width>1266</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -71,22 +71,14 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QLabel" name="labelArms">
+         <widget class="QRadioButton" name="radioButtonArms">
           <property name="font">
            <font>
-            <family>.AppleSystemUIFont</family>
-            <pointsize>13</pointsize>
             <bold>true</bold>
            </font>
           </property>
           <property name="text">
            <string>Arms</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
-          </property>
-          <property name="margin">
-           <number>10</number>
           </property>
          </widget>
         </item>
@@ -94,6 +86,9 @@
          <layout class="QHBoxLayout" name="horizontalLayoutArms">
           <property name="spacing">
            <number>-1</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
           </property>
           <item>
            <layout class="QVBoxLayout" name="verticalLayoutLeftArm">
@@ -1460,30 +1455,14 @@
          <number>30</number>
         </property>
         <item>
-         <widget class="QRadioButton" name="radioButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
+         <widget class="QRadioButton" name="radioButtonWaist">
           <property name="font">
            <font>
-            <family>.AppleSystemUIFont</family>
-            <pointsize>12</pointsize>
+            <bold>true</bold>
            </font>
           </property>
-          <property name="layoutDirection">
-           <enum>Qt::LayoutDirection::LeftToRight</enum>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
           <property name="text">
-           <string>Read Only</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
+           <string>Waist</string>
           </property>
          </widget>
         </item>
@@ -1850,27 +1829,22 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayoutLegs">
         <item>
-         <widget class="QLabel" name="labelLegs">
+         <widget class="QRadioButton" name="radioButtonLegs">
           <property name="font">
            <font>
-            <family>.AppleSystemUIFont</family>
-            <pointsize>13</pointsize>
             <bold>true</bold>
            </font>
           </property>
           <property name="text">
            <string>Legs</string>
           </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
-          </property>
-          <property name="margin">
-           <number>10</number>
-          </property>
          </widget>
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayoutLegs">
+          <property name="topMargin">
+           <number>10</number>
+          </property>
           <item>
            <layout class="QVBoxLayout" name="verticalLayoutLeftLeg">
             <property name="rightMargin">
