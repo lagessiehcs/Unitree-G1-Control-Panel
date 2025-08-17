@@ -180,7 +180,10 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             msg = LowCmd()
             with self.lock:
                 for i in motor_idx:
+                    msg.motor_cmd[i].mode = 1
                     msg.motor_cmd[i].q = float(self.motorAngles[i])
+                    msg.motor_cmd[i].kp = self.motorAnglesPubSub.kp
+                    msg.motor_cmd[i].kd = self.motorAnglesPubSub.kd
             
             self.motorAnglesPubSub.publisher.publish(msg)
     

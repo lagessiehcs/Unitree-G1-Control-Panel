@@ -9,6 +9,9 @@ class MotorAnglesPubSub(Node):
     def __init__(self):
         super().__init__('motor_angles_pubsub')
 
+        self.kp = 50.0
+        self.kd = 1.0
+
         self.subscription = self.create_subscription(LowState, '/lowstate', self.listener_callback, 10)
         self.publisher = self.create_publisher(LowCmd, '/lowcmd', 10)
 
