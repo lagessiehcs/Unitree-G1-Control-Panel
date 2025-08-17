@@ -19,7 +19,12 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
 
         self.motorAngles = [0]*MOTOR_NUMBER
 
-        self.radioButton.toggled.connect(self.radio_changed)
+        self.radioButtonArms.toggled.connect(self.toggleArms)
+        self.radioButtonLegs.toggled.connect(self.toggleLegs)
+        self.radioButtonWaist.toggled.connect(self.toggleWaist)
+
+        self.pushButtonOn.clicked.connect(lambda: self.setEnabledSpinBoxes('all', True))
+        self.pushButtonOff.clicked.connect(lambda: self.setEnabledSpinBoxes('all', False))
 
         self.thread_update_label = QThread()
         self.timer_update_label = QTimer()
@@ -151,7 +156,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             self.labelRightWristYawValue,
         ]
 
-        self.setEnabledSpinBoxes(False)
+        self.setEnabledSpinBoxes('all', False)
 
         for i in range(MOTOR_NUMBER):
             self.spinBoxes[i].valueChanged.connect(lambda value, idx=i: self.spinbox_changed(value, idx))
@@ -162,34 +167,70 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             self.labels[i].setText(str(round(self.motorAnglesPubSub.latest_angles_deg[i], 2)))
     
     def publish_angles(self):
-        if not self.radioButton.isChecked():
+        motor_idx = []
+
+        if self.radioButtonLegs.isChecked():
+            motor_idx.extend(range(12))
+        if self.radioButtonWaist.isChecked():
+            motor_idx.extend(range(12,15))
+        if self.radioButtonArms.isChecked():
+            motor_idx.extend(range(15,29))
+
+        if motor_idx != []:
             msg = LowCmd()
             with self.lock:
-                for i in range (MOTOR_NUMBER):
+                for i in motor_idx:
                     msg.motor_cmd[i].q = float(self.motorAngles[i])
             
             self.motorAnglesPubSub.publisher.publish(msg)
     
 
-    def radio_changed(self, checked):
+    def toggleArms(self, checked):
         if checked:
-            self.setEnabledSpinBoxes(False)
+            self.setEnabledSpinBoxes('arm', True)
         else:
-            self.setEnabledSpinBoxes(True)
+            self.setEnabledSpinBoxes('arm', False)
+      
+
+    def toggleLegs(self, checked):
+        if checked:
+            self.setEnabledSpinBoxes('leg', True)
+        else:
+            self.setEnabledSpinBoxes('leg', False)
+    
+
+    def toggleWaist(self, checked):
+        if checked:
+            self.setEnabledSpinBoxes('waist', True)
+        else:
+            self.setEnabledSpinBoxes('waist', False)
        
-            for i in range (MOTOR_NUMBER):
-                self.spinBoxes[i].setValue(round(self.motorAnglesPubSub.latest_angles_deg[i]))
-                self.motorAngles[i] = round(self.motorAnglesPubSub.latest_angles_deg[i])
 
     def spinbox_changed(self, value, idx):
         with self.lock:
             self.motorAngles[idx] = math.radians(value)
 
 
-    def setEnabledSpinBoxes(self, bool_value):
-        for spinBoxe in self.spinBoxes:
-            spinBoxe.setEnabled(bool_value)
-        
+    def setEnabledSpinBoxes(self, part, bool_value):
+
+        if part == 'leg':
+            motor_range = range(0,12)
+        elif part == 'waist':
+            motor_range = range(12,15)
+        elif part == 'arm':
+            motor_range = range(15,29)
+        elif part == 'all':
+            motor_range = range(0,29)
+            self.radioButtonArms.setChecked(bool_value)
+            self.radioButtonWaist.setChecked(bool_value)
+            self.radioButtonLegs.setChecked(bool_value)
+
+        for i in motor_range:
+            self.spinBoxes[i].setEnabled(bool_value)
+            if bool_value:
+                self.spinBoxes[i].setValue(round(self.motorAnglesPubSub.latest_angles_deg[i]))
+                self.motorAngles[i] = round(self.motorAnglesPubSub.latest_angles_deg[i])
+
 
 def main():
     rclpy.init()
