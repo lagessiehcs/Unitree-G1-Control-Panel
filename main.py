@@ -23,8 +23,8 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.radioButtonLegs.toggled.connect(self.toggleLegs)
         self.radioButtonWaist.toggled.connect(self.toggleWaist)
 
-        self.pushButtonOn.clicked.connect(lambda: self.setEnabledSpinBoxes('all', True))
-        self.pushButtonOff.clicked.connect(lambda: self.setEnabledSpinBoxes('all', False))
+        self.pushButtonOn.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', True))
+        self.pushButtonOff.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', False))
 
         self.thread_update_label = QThread()
         self.timer_update_label = QTimer()
@@ -42,61 +42,61 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.thread_publish_angles.started.connect(self.timer_publish_angles.start)
         self.thread_publish_angles.start()
 
-        self.spinBoxes = [
+        self.doubleSpinBoxes = [
             # Left Hip
-            self.spinBoxLeftHipPitch,
-            self.spinBoxLeftHipRoll,
-            self.spinBoxLeftHipYaw,
+            self.doubleSpinBoxLeftHipPitch,
+            self.doubleSpinBoxLeftHipRoll,
+            self.doubleSpinBoxLeftHipYaw,
 
             # Left Knee
-            self.spinBoxLeftKneePitch,
+            self.doubleSpinBoxLeftKneePitch,
 
             # Left Ankle
-            self.spinBoxLeftAnklePitch,
-            self.spinBoxLeftAnkleRoll,
+            self.doubleSpinBoxLeftAnklePitch,
+            self.doubleSpinBoxLeftAnkleRoll,
 
             # Right Hip
-            self.spinBoxRightHipPitch,
-            self.spinBoxRightHipRoll,
-            self.spinBoxRightHipYaw,
+            self.doubleSpinBoxRightHipPitch,
+            self.doubleSpinBoxRightHipRoll,
+            self.doubleSpinBoxRightHipYaw,
 
             # Right Knee
-            self.spinBoxRightKneePitch,
+            self.doubleSpinBoxRightKneePitch,
 
             # Right Ankle
-            self.spinBoxRightAnklePitch,
-            self.spinBoxRightAnkleRoll,
+            self.doubleSpinBoxRightAnklePitch,
+            self.doubleSpinBoxRightAnkleRoll,
 
             # Waist
-            self.spinBoxWaistYaw,
-            self.spinBoxWaistRoll,
-            self.spinBoxWaistPitch,
+            self.doubleSpinBoxWaistYaw,
+            self.doubleSpinBoxWaistRoll,
+            self.doubleSpinBoxWaistPitch,
 
             # Left Shoulder
-            self.spinBoxLeftShoulderPitch,
-            self.spinBoxLeftShoulderRoll,
-            self.spinBoxLeftShoulderYaw,
+            self.doubleSpinBoxLeftShoulderPitch,
+            self.doubleSpinBoxLeftShoulderRoll,
+            self.doubleSpinBoxLeftShoulderYaw,
 
             # Left Elbow
-            self.spinBoxLeftElbowPitch,
+            self.doubleSpinBoxLeftElbowPitch,
 
             # Left Wrist
-            self.spinBoxLeftWristRoll,
-            self.spinBoxLeftWristPitch,
-            self.spinBoxLeftWristYaw,
+            self.doubleSpinBoxLeftWristRoll,
+            self.doubleSpinBoxLeftWristPitch,
+            self.doubleSpinBoxLeftWristYaw,
      
             # Right Shoulder
-            self.spinBoxRightShoulderPitch,
-            self.spinBoxRightShoulderRoll,
-            self.spinBoxRightShoulderYaw,
+            self.doubleSpinBoxRightShoulderPitch,
+            self.doubleSpinBoxRightShoulderRoll,
+            self.doubleSpinBoxRightShoulderYaw,
 
             # Right Elbow
-            self.spinBoxRightElbowPitch,
+            self.doubleSpinBoxRightElbowPitch,
 
             # Right Wrist
-            self.spinBoxRightWristRoll,
-            self.spinBoxRightWristPitch,
-            self.spinBoxRightWristYaw,
+            self.doubleSpinBoxRightWristRoll,
+            self.doubleSpinBoxRightWristPitch,
+            self.doubleSpinBoxRightWristYaw,
         ]
 
         self.labels = [
@@ -156,15 +156,16 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             self.labelRightWristYawValue,
         ]
 
-        self.setEnabledSpinBoxes('all', False)
+        self.setEnableddoubleSpinBoxes('all', False)
 
         for i in range(MOTOR_NUMBER):
-            self.spinBoxes[i].valueChanged.connect(lambda value, idx=i: self.spinbox_changed(value, idx))
+            self.doubleSpinBoxes[i].valueChanged.connect(lambda value, idx=i: self.doubleSpinBox_changed(value, idx))
 
     def update_label(self):
         rclpy.spin_once(self.motorAnglesPubSub, timeout_sec=0.01)
         for i in range (MOTOR_NUMBER):
-            self.labels[i].setText(str(round(self.motorAnglesPubSub.latest_angles_deg[i], 2)))
+            deg = self.motorAnglesPubSub.latest_angles_deg[i]
+            self.labels[i].setText(f"{deg:.2f}")
     
     def publish_angles(self):
         motor_idx = []
@@ -190,31 +191,31 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
 
     def toggleArms(self, checked):
         if checked:
-            self.setEnabledSpinBoxes('arm', True)
+            self.setEnableddoubleSpinBoxes('arm', True)
         else:
-            self.setEnabledSpinBoxes('arm', False)
+            self.setEnableddoubleSpinBoxes('arm', False)
       
 
     def toggleLegs(self, checked):
         if checked:
-            self.setEnabledSpinBoxes('leg', True)
+            self.setEnableddoubleSpinBoxes('leg', True)
         else:
-            self.setEnabledSpinBoxes('leg', False)
+            self.setEnableddoubleSpinBoxes('leg', False)
     
 
     def toggleWaist(self, checked):
         if checked:
-            self.setEnabledSpinBoxes('waist', True)
+            self.setEnableddoubleSpinBoxes('waist', True)
         else:
-            self.setEnabledSpinBoxes('waist', False)
+            self.setEnableddoubleSpinBoxes('waist', False)
        
 
-    def spinbox_changed(self, value, idx):
+    def doubleSpinBox_changed(self, value, idx):
         with self.lock:
             self.motorAngles[idx] = math.radians(value)
 
 
-    def setEnabledSpinBoxes(self, part, bool_value):
+    def setEnableddoubleSpinBoxes(self, part, bool_value):
 
         if part == 'leg':
             motor_range = range(0,12)
@@ -229,10 +230,10 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             self.radioButtonLegs.setChecked(bool_value)
 
         for i in motor_range:
-            self.spinBoxes[i].setEnabled(bool_value)
+            self.doubleSpinBoxes[i].setEnabled(bool_value)
             if bool_value:
-                self.spinBoxes[i].setValue(round(self.motorAnglesPubSub.latest_angles_deg[i]))
-                self.motorAngles[i] = round(self.motorAnglesPubSub.latest_angles_deg[i])
+                self.doubleSpinBoxes[i].setValue(self.motorAnglesPubSub.latest_angles_deg[i])
+                self.motorAngles[i] = self.motorAnglesPubSub.latest_angles_deg[i]
 
 
 def main():
