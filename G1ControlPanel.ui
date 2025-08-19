@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1266</width>
+    <width>1465</width>
     <height>517</height>
    </rect>
   </property>
@@ -210,6 +210,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftShoulderPitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -295,6 +298,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftShoulderRoll">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -374,6 +380,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftShoulderYaw">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -490,6 +499,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftElbowPitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -638,6 +650,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftWristPitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -701,6 +716,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftWristRoll">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -764,6 +782,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftWristYaw">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -926,6 +947,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightShoulderPitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -989,6 +1013,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightShoulderRoll">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -1052,6 +1079,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightShoulderYaw">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -1168,6 +1198,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightElbowPitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -1313,6 +1346,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightWristPitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -1376,6 +1412,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightWristRoll">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -1439,6 +1478,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightWristYaw">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -1636,6 +1678,9 @@
                 </item>
                 <item>
                  <widget class="QDoubleSpinBox" name="doubleSpinBoxWaistPitch">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="minimumSize">
                    <size>
                     <width>90</width>
@@ -1721,6 +1766,9 @@
                 </item>
                 <item>
                  <widget class="QDoubleSpinBox" name="doubleSpinBoxWaistRoll">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="minimumSize">
                    <size>
                     <width>90</width>
@@ -1800,6 +1848,9 @@
                 </item>
                 <item>
                  <widget class="QDoubleSpinBox" name="doubleSpinBoxWaistYaw">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="minimumSize">
                    <size>
                     <width>90</width>
@@ -2096,6 +2147,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftHipPitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2121,10 +2175,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-145.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>165.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2175,6 +2229,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftHipRoll">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2200,10 +2257,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-30.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>170.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2254,6 +2311,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftHipYaw">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2279,10 +2339,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-158.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>158.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2370,6 +2430,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftKneePitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2395,10 +2458,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-5.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>165.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2483,6 +2546,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftAnklePitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2508,10 +2574,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-50.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>30.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2562,6 +2628,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftAnkleRoll">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2587,10 +2656,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-15.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>15.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2724,6 +2793,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightHipPitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2749,10 +2821,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-145.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>165.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2787,6 +2859,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightHipRoll">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2812,10 +2887,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-170.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>30.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2850,6 +2925,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightHipYaw">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2875,10 +2953,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-158.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>158.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -2966,6 +3044,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightKneePitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -2991,10 +3072,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-5.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>165.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -3079,6 +3160,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightAnklePitch">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -3104,10 +3188,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-50.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>30.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -3158,6 +3242,9 @@
                   </item>
                   <item>
                    <widget class="QDoubleSpinBox" name="doubleSpinBoxRightAnkleRoll">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -3183,10 +3270,10 @@
                      <bool>false</bool>
                     </property>
                     <property name="minimum">
-                     <double>-999.990000000000009</double>
+                     <double>-15.000000000000000</double>
                     </property>
                     <property name="maximum">
-                     <double>999.990000000000009</double>
+                     <double>15.000000000000000</double>
                     </property>
                    </widget>
                   </item>

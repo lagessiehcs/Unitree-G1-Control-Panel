@@ -158,7 +158,6 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             self.labelRightWristYawValue,
         ]
 
-        self.setEnableddoubleSpinBoxes('all', False)
 
         for i in range(MOTOR_NUMBER):
             self.doubleSpinBoxes[i].valueChanged.connect(lambda value, idx=i: self.doubleSpinBox_changed(value, idx))
