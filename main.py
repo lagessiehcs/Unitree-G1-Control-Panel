@@ -6,6 +6,8 @@ from G1ControlPanel import Ui_G1ControlPanel
 from MotorAnglePubSub import *
 import threading
 
+from motor_crc import *
+
 MOTOR_NUMBER = 29
 
 class MainWindow(QMainWindow, Ui_G1ControlPanel):
@@ -185,7 +187,8 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
                     msg.motor_cmd[i].q = float(self.motorAngles[i])
                     msg.motor_cmd[i].kp = self.motorAnglesPubSub.kp
                     msg.motor_cmd[i].kd = self.motorAnglesPubSub.kd
-            
+                    
+            get_crc(msg)
             self.motorAnglesPubSub.publisher.publish(msg)
     
 
