@@ -1797,7 +1797,7 @@
                    <double>-29.789999999999999</double>
                   </property>
                   <property name="maximum">
-                   <double>-29.789999999999999</double>
+                   <double>29.789999999999999</double>
                   </property>
                  </widget>
                 </item>
