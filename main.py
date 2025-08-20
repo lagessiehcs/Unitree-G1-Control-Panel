@@ -6,7 +6,7 @@ from G1ControlPanel import Ui_G1ControlPanel
 from MotorAnglePubSub import *
 import threading
 
-from motor_crc import *
+from utils.crc import CRC
 
 MOTOR_NUMBER = 29
 
@@ -14,6 +14,8 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        self.crc = CRC()
 
         self.lock = threading.Lock()
         
@@ -178,7 +180,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         if self.radioButtonArms.isChecked():
             motor_idx.extend(range(15,29))
 
-        if motor_idx != []:
+        if True:
             msg = LowCmd()
             with self.lock:
                 for i in motor_idx:
@@ -186,8 +188,8 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
                     msg.motor_cmd[i].q = float(self.motorAngles[i])
                     msg.motor_cmd[i].kp = self.motorAnglesPubSub.kp
                     msg.motor_cmd[i].kd = self.motorAnglesPubSub.kd
-                    
-            get_crc(msg)
+
+            msg.crc = self.crc.Crc(msg)
             self.motorAnglesPubSub.publisher.publish(msg)
     
 
