@@ -8,6 +8,7 @@ import threading
 
 from utils.crc import CRC
 import time
+import signal
 
 MOTOR_NUMBER = 29
 UPDATE_LABEL_TIME = 0.02 # 50 Hz
@@ -251,7 +252,20 @@ def main():
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
-    app.exec()
+
+    # handle Ctrl+C
+    def sigint_handler(sig, frame):
+        print("Ctrl+C pressed. Exiting...")
+        app.quit()
+
+    signal.signal(signal.SIGINT, sigint_handler)
+
+    # QTimer keeps event loop responsive to SIGINT
+    timer = QTimer()
+    timer.start(100)  # check every 100 ms
+    timer.timeout.connect(lambda: None)  # no-op
+
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
