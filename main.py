@@ -41,7 +41,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.thread_publish_angles = QThread()
         self.timer_publish_angles = QTimer()
         self.timer_publish_angles.moveToThread(self.thread_publish_angles)
-        self.timer_publish_angles.setInterval(20)
+        self.timer_publish_angles.setInterval(2)
         self.timer_publish_angles.timeout.connect(self.publish_angles)
         self.thread_publish_angles.started.connect(self.timer_publish_angles.start)
         self.thread_publish_angles.start()
@@ -237,7 +237,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             self.doubleSpinBoxes[i].setEnabled(bool_value)
             if bool_value:
                 self.doubleSpinBoxes[i].setValue(self.motorAnglesPubSub.latest_angles_deg[i])
-                self.motorAngles[i] = self.motorAnglesPubSub.latest_angles_deg[i]
+                self.motorAngles[i] = math.radians(self.motorAnglesPubSub.latest_angles_deg[i])
 
 
 def main():
