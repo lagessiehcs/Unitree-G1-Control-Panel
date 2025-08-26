@@ -12,7 +12,7 @@ import signal
 
 MOTOR_NUMBER = 29
 UPDATE_LABEL_TIME = 0.02 # 50 Hz
-PUBLISH_ANGLES_TIME = 0.002 # 500 Hz
+PUBLISH_ANGLES_TIME = 0.02 # 500 Hz
 
 class MainWindow(QMainWindow, Ui_G1ControlPanel):
     def __init__(self):
@@ -169,6 +169,10 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             time.sleep(UPDATE_LABEL_TIME)
     
     def publish_angles(self):
+        msg = LowCmd()
+        msg.mode_pr = 0
+        msg.mode_machine = 4
+
         while self.main_window_opened:
             motor_idx = []
 
@@ -179,8 +183,8 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             if self.radioButtonArms.isChecked():
                 motor_idx.extend(range(15,29))
 
-            if True:
-                msg = LowCmd()
+            if motor_idx != []:
+                
                 with self.lock:
                     for i in motor_idx:
                         msg.motor_cmd[i].mode = 1
