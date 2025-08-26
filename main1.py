@@ -36,6 +36,10 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.pushButtonOn.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', True))
         self.pushButtonOff.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', False))
 
+        self.lowcmd_msg = LowCmd()
+        self.lowcmd_msg.mode_pr = 0
+        self.lowcmd_msg.mode_machine = 4
+
         self.update_label_thread = threading.Thread(target=self.update_label)
         self.publish_angles_thread = threading.Thread(target=self.publish_angles)
 
@@ -172,12 +176,13 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
     def timer_callback(self):
         node = Node()
         timer = node.create_timer(PUBLISH_ANGLES_TIME, self.publish_angles)
-    def publish_angles(self):
-        msg = LowCmd()
-        msg.mode_pr = 0
-        msg.mode_machine = 4
+        if not self.main_window_opened:
+            node.destroy_node()
 
-        while self.main_window_opened:
+
+    def publish_angles(self):
+        
+        if self.main_window_opened:
             motor_idx = []
 
             if self.radioButtonLegs.isChecked():
@@ -191,16 +196,15 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
                 
                 with self.lock:
                     for i in motor_idx:
-                        msg.motor_cmd[i].mode = 1
-                        msg.motor_cmd[i].q = float(self.motorAngles[i])
-                        msg.motor_cmd[i].dq = 0.0
-                        msg.motor_cmd[i].kp = self.motorAnglesPubSub.kp
-                        msg.motor_cmd[i].kd = self.motorAnglesPubSub.kd
-                        msg.motor_cmd[i].tau = 0.0
+                        self.lowcmd_msg.motor_cmd[i].mode = 1
+                        self.lowcmd_msg.motor_cmd[i].q = float(self.motorAngles[i])
+                        self.lowcmd_msg.motor_cmd[i].dq = 0.0
+                        self.lowcmd_msg.motor_cmd[i].kp = self.motorAnglesPubSub.kp
+                        self.lowcmd_msg.motor_cmd[i].kd = self.motorAnglesPubSub.kd
+                        self.lowcmd_msg.motor_cmd[i].tau = 0.0
 
-                msg.crc = self.crc.Crc(msg)
-                self.motorAnglesPubSub.publisher.publish(msg)
-            time.sleep(PUBLISH_ANGLES_TIME)
+                self.lowcmd_msg.crc = self.crc.Crc(self.lowcmd_msg)
+                self.motorAnglesPubSub.publisher.publish(self.lowcmd_msg)
 
     def toggleArms(self, checked):
         if checked:
