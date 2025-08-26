@@ -12,7 +12,7 @@ import signal
 
 MOTOR_NUMBER = 29
 UPDATE_LABEL_TIME = 0.02 # 50 Hz
-PUBLISH_ANGLES_TIME = 0.00 # 500 Hz
+PUBLISH_ANGLES_TIME = 0.0 # 500 Hz
 
 class MainWindow(QMainWindow, Ui_G1ControlPanel):
     def __init__(self):
@@ -171,7 +171,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
     
     def publish_angles(self):
         msg = LowCmd()
-        msg.mode_pr = 0
+        msg.mode_pr = 1
         msg.mode_machine = 4
 
         while self.main_window_opened:
