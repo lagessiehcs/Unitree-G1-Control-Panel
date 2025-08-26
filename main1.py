@@ -2,6 +2,15 @@ import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 
+import math
+
+import rclpy
+from rclpy.node import Node
+from unitree_hg.msg import (LowState,LowCmd)
+from rclpy.executors import MultiThreadedExecutor
+from rclpy.callback_groups import ReentrantCallbackGroup
+
+
 from G1ControlPanel import Ui_G1ControlPanel
 from MotorAnglePubSub import *
 import threading
@@ -12,12 +21,17 @@ import signal
 
 MOTOR_NUMBER = 29
 UPDATE_LABEL_TIME = 0.02 # 50 Hz
-PUBLISH_ANGLES_TIME = 0.00 # 500 Hz
+PUBLISH_ANGLES_TIME = 0.002 # 500 Hz
 
-class MainWindow(QMainWindow, Ui_G1ControlPanel):
+class MainWindow(QMainWindow, Ui_G1ControlPanel, Node):
     def __init__(self):
-        super().__init__()
+        super().__init__('motor_angles_pubsub')
         self.setupUi(self)
+
+        self.kp = 50.0
+        self.kd = 1.0
+
+        self.latest_angles_deg = [0]*29
 
         self.main_window_opened = True
 
@@ -36,12 +50,19 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.pushButtonOn.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', True))
         self.pushButtonOff.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', False))
 
+        self.subscription = self.create_subscription(LowState, '/lowstate', self.listener_callback, 10, callback_group=ReentrantCallbackGroup())
+        self.publisher = self.create_publisher(LowCmd, '/lowcmd', 10)
+
         self.update_label_thread = threading.Thread(target=self.update_label)
-        self.publish_angles_thread = threading.Thread(target=self.publish_angles)
+        # self.publish_angles_thread = threading.Thread(target=self.publish_angles)
 
         self.update_label_thread.start()
-        self.publish_angles_thread.start()
+        # self.publish_angles_thread.start()
         
+        self.lowcmd_msg = LowCmd()
+        self.lowcmd_msg.mode_pr = 0
+        self.lowcmd_msg.mode_machine = 4
+        self.timer = self.create_timer(PUBLISH_ANGLES_TIME, self.publish_angles, callback_group=ReentrantCallbackGroup())
 
         self.doubleSpinBoxes = [
             # Left Hip
@@ -161,18 +182,18 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         for i in range(MOTOR_NUMBER):
             self.doubleSpinBoxes[i].valueChanged.connect(lambda value, idx=i: self.doubleSpinBox_changed(value, idx))
 
+    def listener_callback(self, msg):
+        motor_state = msg.motor_state[:29]
+        self.latest_angles_deg = [math.degrees(state.q) for state in motor_state]
+    
     def update_label(self):
         while self.main_window_opened:
-            rclpy.spin_once(self.motorAnglesPubSub, timeout_sec=0.01)
             for i in range (MOTOR_NUMBER):
-                deg = self.motorAnglesPubSub.latest_angles_deg[i]
+                deg = self.latest_angles_deg[i]
                 self.labels[i].setText(f"{deg:.2f}")
             time.sleep(UPDATE_LABEL_TIME)
     
-    def publish_angles(self):
-        msg = LowCmd()
-        msg.mode_pr = 0
-        msg.mode_machine = 4
+    def publish_angles(self):        
 
         while self.main_window_opened:
             motor_idx = []
@@ -188,16 +209,15 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
                 
                 with self.lock:
                     for i in motor_idx:
-                        msg.motor_cmd[i].mode = 1
-                        msg.motor_cmd[i].q = float(self.motorAngles[i])
-                        msg.motor_cmd[i].dq = 0.0
-                        msg.motor_cmd[i].kp = self.motorAnglesPubSub.kp
-                        msg.motor_cmd[i].kd = self.motorAnglesPubSub.kd
-                        msg.motor_cmd[i].tau = 0.0
+                        self.lowcmd_msg.motor_cmd[i].mode = 1
+                        self.lowcmd_msg.motor_cmd[i].q = float(self.motorAngles[i])
+                        self.lowcmd_msg.motor_cmd[i].dq = 0.0
+                        self.lowcmd_msg.motor_cmd[i].kp = self.kp
+                        self.lowcmd_msg.motor_cmd[i].kd = self.kd
+                        self.lowcmd_msg.motor_cmd[i].tau = 0.0
 
-                msg.crc = self.crc.Crc(msg)
-                self.motorAnglesPubSub.publisher.publish(msg)
-            time.sleep(PUBLISH_ANGLES_TIME)
+                self.lowcmd_msg.crc = self.crc.Crc(self.lowcmd_msg)
+                self.publisher.publish(self.lowcmd_msg)
 
     def toggleArms(self, checked):
         if checked:
@@ -242,14 +262,14 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         for i in motor_range:
             self.doubleSpinBoxes[i].setEnabled(bool_value)
             if bool_value:
-                self.doubleSpinBoxes[i].setValue(self.motorAnglesPubSub.latest_angles_deg[i])
-                self.motorAngles[i] = math.radians(self.motorAnglesPubSub.latest_angles_deg[i])
+                self.doubleSpinBoxes[i].setValue(self.latest_angles_deg[i])
+                self.motorAngles[i] = math.radians(self.latest_angles_deg[i])
 
     def closeEvent(self, event):
         self.main_window_opened = False
         self.update_label_thread.join()
-        self.publish_angles_thread.join()
-        self.motorAnglesPubSub.destroy_node()
+        # self.publish_angles_thread.join()
+        self.destroy_node()
         rclpy.shutdown()
         event.accept()
 
@@ -259,6 +279,20 @@ def main():
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
+
+    executor = MultiThreadedExecutor(num_threads=2)
+    executor.add_node(window)
+
+    try:
+        executor.spin()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        print("Ctrl+C pressed. Exiting...")
+        app.quit()
+        executor.shutdown()
+        window.destroy_node()
+        rclpy.shutdown()
 
     # handle Ctrl+C
     def sigint_handler(sig, frame):
