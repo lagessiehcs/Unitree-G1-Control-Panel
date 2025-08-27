@@ -36,11 +36,11 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.pushButtonOn.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', True))
         self.pushButtonOff.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', False))
 
-        self.update_label_thread = threading.Thread(target=self.update_label)
-        self.publish_angles_thread = threading.Thread(target=self.publish_angles)
+        self.updateLabel_thread = threading.Thread(target=self.updateLabel)
+        self.publishAngles_thread = threading.Thread(target=self.publishAngles)
 
-        self.update_label_thread.start()
-        self.publish_angles_thread.start()
+        self.updateLabel_thread.start()
+        self.publishAngles_thread.start()
         
 
         self.doubleSpinBoxes = [
@@ -161,7 +161,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         for i in range(MOTOR_NUMBER):
             self.doubleSpinBoxes[i].valueChanged.connect(lambda value, idx=i: self.doubleSpinBox_changed(value, idx))
 
-    def update_label(self):
+    def updateLabel(self):
         while self.main_window_opened:
             rclpy.spin_once(self.motorAnglesPubSub, timeout_sec=0.01)
             for i in range (MOTOR_NUMBER):
@@ -169,7 +169,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
                 self.labels[i].setText(f"{deg:.2f}")
             time.sleep(UPDATE_LABEL_TIME)
     
-    def publish_angles(self):
+    def publishAngles(self):
 
         while self.main_window_opened:
             motor_idx = []
@@ -239,8 +239,8 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
 
     def closeEvent(self, event):
         self.main_window_opened = False
-        self.update_label_thread.join()
-        self.publish_angles_thread.join()
+        self.updateLabel_thread.join()
+        self.publishAngles_thread.join()
         self.motorAnglesPubSub.destroy_node()
         rclpy.shutdown()
         event.accept()
