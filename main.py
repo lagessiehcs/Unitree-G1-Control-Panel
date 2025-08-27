@@ -170,9 +170,6 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             time.sleep(UPDATE_LABEL_TIME)
     
     def publish_angles(self):
-        msg = LowCmd()
-        msg.mode_pr = 1
-        msg.mode_machine = 4
 
         while self.main_window_opened:
             motor_idx = []
@@ -185,6 +182,9 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
                 motor_idx.extend(range(15,29))
 
             if motor_idx != []:
+                msg = LowCmd()
+                msg.mode_pr = 0
+                msg.mode_machine = 4
                 
                 with self.lock:
                     for i in motor_idx:
@@ -200,24 +200,16 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             time.sleep(PUBLISH_ANGLES_TIME)
 
     def toggleArms(self, checked):
-        if checked:
-            self.setEnableddoubleSpinBoxes('arm', True)
-        else:
-            self.setEnableddoubleSpinBoxes('arm', False)
+        self.setEnableddoubleSpinBoxes('arm', checked)
+        
       
 
     def toggleLegs(self, checked):
-        if checked:
-            self.setEnableddoubleSpinBoxes('leg', True)
-        else:
-            self.setEnableddoubleSpinBoxes('leg', False)
+        self.setEnableddoubleSpinBoxes('leg', checked)
     
 
     def toggleWaist(self, checked):
-        if checked:
-            self.setEnableddoubleSpinBoxes('waist', True)
-        else:
-            self.setEnableddoubleSpinBoxes('waist', False)
+        self.setEnableddoubleSpinBoxes('waist', checked)
        
 
     def doubleSpinBox_changed(self, value, idx):
