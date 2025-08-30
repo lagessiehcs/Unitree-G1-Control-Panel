@@ -1,2 +1,7 @@
 __pycache__
 G1ControlPanel.py
+.vscode
+build
+log
+src
+install
