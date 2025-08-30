@@ -1,8 +1,15 @@
 import os
+import subprocess
 from glob import glob
 from setuptools import find_packages, setup
+from setuptools.command.build_py import build_py as build_py_orig
 
 package_name = 'py_control_panel_package'
+
+
+ui_file = os.path.join(package_name, "G1ControlPanel.ui")
+py_file = os.path.join(package_name, "G1ControlPanel.py")
+subprocess.run(["pyside6-uic", ui_file, "-o", py_file], check=True)
 
 setup(
     name=package_name,
@@ -27,10 +34,9 @@ setup(
         ],
     },
     package_data={
-        'human_position_publisher': [
-            "*", 
+        'py_control_panel_package': [
+            "utils/lib/*",
+            "utils/*" 
         ],
-    }
-
-
+    },
 )
