@@ -14,9 +14,6 @@ using namespace std::chrono_literals;
 #define MOTORS 29
 #define TIMEOUT_MS 100 // stop publishing if no message received for 100ms
 
-/* This example creates a subclass of Node and uses std::bind() to register a
- * member function as a callback from the timer. */
-
 class InterfacePubSub : public rclcpp::Node
 {
 public:

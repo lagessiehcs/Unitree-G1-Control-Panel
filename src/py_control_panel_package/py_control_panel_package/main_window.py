@@ -3,12 +3,12 @@ from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 
 try: # Relative import within the package
-    from .G1ControlPanel import Ui_G1ControlPanel
-    from .MotorAnglePubSub import *  
+    from .g1_control_panel import Ui_G1ControlPanel
+    from .motor_angle_pubsub import *  
     from .utils.crc import CRC
 except ImportError: # Normal import when running directly
-    from G1ControlPanel import Ui_G1ControlPanel
-    from MotorAnglePubSub import *  
+    from g1_control_panel import Ui_G1ControlPanel
+    from motor_angle_pubsub import *  
     from utils.crc import CRC
 
     

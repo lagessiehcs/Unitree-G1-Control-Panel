@@ -8,7 +8,7 @@ package_name = 'py_control_panel_package'
 
 
 ui_file = os.path.join(package_name, "G1ControlPanel.ui")
-py_file = os.path.join(package_name, "G1ControlPanel.py")
+py_file = os.path.join(package_name, "g1_control_panel.py")
 subprocess.run(["pyside6-uic", ui_file, "-o", py_file], check=True)
 
 setup(
@@ -30,7 +30,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'control_panel = py_control_panel_package.main:main',
+            'control_panel = py_control_panel_package.main_window:main',
         ],
     },
     package_data={
