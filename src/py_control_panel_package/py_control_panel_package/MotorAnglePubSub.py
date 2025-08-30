@@ -13,7 +13,7 @@ class MotorAnglesPubSub(Node):
         self.kd = 1.0
 
         self.subscription = self.create_subscription(LowState, '/lowstate', self.listener_callback, 10)
-        self.publisher = self.create_publisher(LowCmd, '/lowcmd', 10)
+        self.publisher = self.create_publisher(LowCmd, '/lowcmd_interface', 10)
 
         self.latest_angles_deg = [0]*29
 

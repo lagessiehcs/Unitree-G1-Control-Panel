@@ -10,8 +10,9 @@
 
 using namespace std::chrono_literals;
 
-#define SAMPLING_TIME 2
+#define SAMPLING_TIME_MS 2
 #define MOTORS 29
+#define TIMEOUT_MS 100 // stop publishing if no message received for 100ms
 
 /* This example creates a subclass of Node and uses std::bind() to register a
  * member function as a callback from the timer. */
@@ -32,14 +33,18 @@ public:
         lowcmd_publisher_ =
             this->create_publisher<unitree_hg::msg::LowCmd>("/lowcmd", 10);
 
-        timer_ = this->create_wall_timer(std::chrono::milliseconds(SAMPLING_TIME),
+        timer_ = this->create_wall_timer(std::chrono::milliseconds(SAMPLING_TIME_MS),
                                          [this]
                                          { timer_callback(); });
+
+        last_msg_time_ = std::chrono::steady_clock::now();
     }
 
 private:
     void topic_callback(const unitree_hg::msg::LowCmd::SharedPtr &message)
     {
+        last_msg_time_ = std::chrono::steady_clock::now(); // update timestamp
+
         low_command_.mode_pr = message->mode_pr;
         low_command_.mode_machine = message->mode_machine;
         for (int i = 0; i < MOTORS; i++)
@@ -51,14 +56,21 @@ private:
 
     void timer_callback()
     {
-        get_crc(low_command_);
-        lowcmd_publisher_->publish(low_command_);
+        auto now = std::chrono::steady_clock::now();
+        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_msg_time_);
+
+        if (elapsed < std::chrono::milliseconds(TIMEOUT_MS))
+        {
+            get_crc(low_command_);
+            lowcmd_publisher_->publish(low_command_);
+        }
     }
 
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Subscription<unitree_hg::msg::LowCmd>::SharedPtr lowcmd_subscription_;
     rclcpp::Publisher<unitree_hg::msg::LowCmd>::SharedPtr lowcmd_publisher_;
-    unitree_hg::msg::LowCmd low_command_; // Unitree hg lowcmd message
+    unitree_hg::msg::LowCmd low_command_;                 // Unitree hg lowcmd message
+    std::chrono::steady_clock::time_point last_msg_time_; // last received message time
 };
 
 int main(int argc, char *argv[])
