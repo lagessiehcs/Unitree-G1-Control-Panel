@@ -48,6 +48,15 @@ private:
         {
             low_command_.motor_cmd[i].mode = message->motor_cmd[i].mode;
             low_command_.motor_cmd[i].q = message->motor_cmd[i].q;
+            low_command_.motor_cmd[i].dq = message->motor_cmd[i].dq;
+            low_command_.motor_cmd[i].tau = message->motor_cmd[i].tau;
+            low_command_.motor_cmd[i].kp = message->motor_cmd[i].kp;
+            low_command_.motor_cmd[i].kd = message->motor_cmd[i].kd;
+            low_command_.motor_cmd[i].reserve = message->motor_cmd[i].reserve;
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            low_command_.reserve[i] = message->reserve[i];
         }
     }
 
