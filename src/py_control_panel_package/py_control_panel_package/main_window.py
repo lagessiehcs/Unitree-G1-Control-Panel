@@ -19,12 +19,6 @@ import signal
 
 MOTORS = 29
 UPDATE_LABEL_TIME = 0.02
-PUBLISH_ANGLE_TIME_INTERFACE = 0.02
-PUBLISH_ANGLE_TIME_STANDALONE = 0.00082 # ~500Hz for Python
-PUBLISH_TOPIC_INTERFACE = '/lowcmd_interface'
-PUBLISH_TOPIC_STANDALONE = '/lowcmd'
-    
-
 
 class MainWindow(QMainWindow, Ui_G1ControlPanel):
     def __init__(self):
@@ -32,11 +26,6 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
 
         self.motors = MOTORS
         self.update_label_time = UPDATE_LABEL_TIME 
-        self.publish_angle_time = PUBLISH_ANGLE_TIME_INTERFACE
-        self.publish_topic = PUBLISH_TOPIC_INTERFACE
-        if __name__ == "__main__":
-            self.publish_topic = PUBLISH_TOPIC_STANDALONE
-            self.publish_angle_time = PUBLISH_ANGLE_TIME_STANDALONE
         
         self.setupUi(self)
         self.main_window_opened = True
@@ -44,7 +33,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.crc = CRC()
         self.lock = threading.Lock()
 
-        self.motorAnglesPubSub = MotorAnglesPubSub(self.publish_topic)
+        self.motorAnglesPubSub = MotorAnglesPubSub()
 
         self.motorAngles = [0]*self.motors
 
@@ -176,7 +165,6 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             self.labelRightWristYawValue,
         ]
 
-
         for i in range(self.motors):
             self.doubleSpinBoxes[i].valueChanged.connect(lambda value, idx=i: self.doubleSpinBox_changed(value, idx))
 
@@ -216,25 +204,20 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
 
                 msg.crc = self.crc.Crc(msg)
                 self.motorAnglesPubSub.publisher.publish(msg)
-            time.sleep(self.publish_angle_time)
+            time.sleep(self.motorAnglesPubSub.publish_angle_time)
 
     def toggleArms(self, checked):
         self.setEnableddoubleSpinBoxes('arm', checked)
         
-      
-
     def toggleLegs(self, checked):
         self.setEnableddoubleSpinBoxes('leg', checked)
     
-
     def toggleWaist(self, checked):
-        self.setEnableddoubleSpinBoxes('waist', checked)
-       
+        self.setEnableddoubleSpinBoxes('waist', checked)      
 
     def doubleSpinBox_changed(self, value, idx):
         with self.lock:
             self.motorAngles[idx] = math.radians(value)
-
 
     def setEnableddoubleSpinBoxes(self, part, bool_value):
 

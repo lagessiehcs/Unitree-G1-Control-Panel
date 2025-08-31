@@ -1,0 +1,4 @@
+py_control_panel:
+  ros__parameters:
+    publisher_topic: '/lowcmd_interface'
+    publish_angle_time: 0.02
