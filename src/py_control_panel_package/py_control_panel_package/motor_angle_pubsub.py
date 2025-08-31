@@ -6,14 +6,14 @@ from rclpy.node import Node
 from unitree_hg.msg import (LowState,LowCmd)
 
 class MotorAnglesPubSub(Node):
-    def __init__(self):
+    def __init__(self, publish_topic):
         super().__init__('motor_angles_pubsub')
 
         self.kp = 50.0
         self.kd = 1.0
 
         self.subscription = self.create_subscription(LowState, '/lowstate', self.listener_callback, 10)
-        self.publisher = self.create_publisher(LowCmd, '/lowcmd_interface', 10)
+        self.publisher = self.create_publisher(LowCmd, publish_topic, 10)
 
         self.latest_angles_deg = [0]*29
 
