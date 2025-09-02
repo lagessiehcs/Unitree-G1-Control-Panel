@@ -12,7 +12,7 @@ using namespace std::chrono_literals;
 
 #define SAMPLING_TIME_MS 2
 #define MOTORS 29
-#define TIMEOUT_MS 100 // stop publishing if no message received for 100ms
+#define TIMEOUT_MS 50 // stop publishing if no message received for 100ms
 
 class InterfacePubSub : public rclcpp::Node
 {
@@ -47,12 +47,11 @@ private:
         for (int i = 0; i < MOTORS; i++)
         {
             low_command_.motor_cmd[i].mode = message->motor_cmd[i].mode;
-            low_command_.motor_cmd[i].q = message->motor_cmd[i].q;
+            set_angle(i, message->motor_cmd[i].q, step_size);
             low_command_.motor_cmd[i].dq = message->motor_cmd[i].dq;
             low_command_.motor_cmd[i].tau = message->motor_cmd[i].tau;
             low_command_.motor_cmd[i].kp = message->motor_cmd[i].kp;
             low_command_.motor_cmd[i].kd = message->motor_cmd[i].kd;
-            low_command_.motor_cmd[i].reserve = message->motor_cmd[i].reserve;
         }
         for (int i = 0; i < 4; i++)
         {
@@ -70,6 +69,37 @@ private:
             get_crc(low_command_);
             lowcmd_publisher_->publish(low_command_);
         }
+        else
+        {
+            low_command_ = unitree_hg::msg::LowCmd();
+        }
+    }
+
+    void set_angle(int motor_idx, float target, float step_size)
+    {
+        if (low_command_.motor_cmd[motor_idx].q <= target)
+        {
+            if (low_command_.motor_cmd[motor_idx].q + step_size < target)
+            {
+                low_command_.motor_cmd[motor_idx].q += step_size;
+            }
+            else
+            {
+                low_command_.motor_cmd[motor_idx].q = target;
+            }
+        }
+
+        else if (low_command_.motor_cmd[motor_idx].q > target)
+        {
+            if (low_command_.motor_cmd[motor_idx].q - step_size > target)
+            {
+                low_command_.motor_cmd[motor_idx].q -= step_size;
+            }
+            else
+            {
+                low_command_.motor_cmd[motor_idx].q = target;
+            }
+        }
     }
 
     rclcpp::TimerBase::SharedPtr timer_;
@@ -77,6 +107,7 @@ private:
     rclcpp::Publisher<unitree_hg::msg::LowCmd>::SharedPtr lowcmd_publisher_;
     unitree_hg::msg::LowCmd low_command_;                 // Unitree hg lowcmd message
     std::chrono::steady_clock::time_point last_msg_time_; // last received message time
+    float step_size = 0.008;
 };
 
 int main(int argc, char *argv[])
