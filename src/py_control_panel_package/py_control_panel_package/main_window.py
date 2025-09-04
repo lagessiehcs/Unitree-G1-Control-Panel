@@ -202,7 +202,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
                         msg.motor_cmd[i].kd = self.motorAnglesPubSub.kd
                         msg.motor_cmd[i].tau = 0.0
 
-                msg.crc = self.crc.Crc(msg)
+                #msg.crc = self.crc.Crc(msg)
                 self.motorAnglesPubSub.publisher.publish(msg)
             time.sleep(self.motorAnglesPubSub.publish_angle_time)
 
@@ -220,7 +220,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
             self.motorAngles[idx] = math.radians(value)
 
     def setEnableddoubleSpinBoxes(self, part, bool_value):
-        motor_range = []
+
         if part == 'leg':
             motor_range = range(0,12)
         elif part == 'waist':
@@ -228,13 +228,7 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         elif part == 'arm':
             motor_range = range(15,29)
         elif part == 'all':
-            if not self.radioButtonLegs.isChecked():
-                motor_range.extend(range(0,12))
-            if not self.radioButtonWaist.isChecked():
-                motor_range.extend(range(12,15))
-            if not self.radioButtonArms.isChecked():
-                motor_range.extend(range(15,29))
-            
+            motor_range = range(0,29)
             self.radioButtonArms.setChecked(bool_value)
             self.radioButtonWaist.setChecked(bool_value)
             self.radioButtonLegs.setChecked(bool_value)
