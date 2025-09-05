@@ -10,7 +10,7 @@
 
 using namespace std::chrono_literals;
 
-#define SAMPLING_TIME_MS 2
+#define SAMPLING_TIME_MS 0
 #define MOTORS 29
 #define TIMEOUT_MS 50 // stop publishing if no message received for 100ms
 
