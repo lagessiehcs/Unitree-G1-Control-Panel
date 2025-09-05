@@ -27,13 +27,6 @@ public:
                 topic_callback_cmd(message);
             });
 
-        lowstate_subscription_ = this->create_subscription<unitree_hg::msg::LowState>(
-            "/lowstate", 10,
-            [this](const unitree_hg::msg::LowState::SharedPtr message)
-            {
-                topic_callback_state(message);
-            });
-
         lowcmd_publisher_ =
             this->create_publisher<unitree_hg::msg::LowCmd>("/lowcmd", 10);
 
@@ -134,7 +127,6 @@ private:
 
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Subscription<unitree_hg::msg::LowCmd>::SharedPtr lowcmd_subscription_;
-    rclcpp::Subscription<unitree_hg::msg::LowState>::SharedPtr lowstate_subscription_;
     rclcpp::Publisher<unitree_hg::msg::LowCmd>::SharedPtr lowcmd_publisher_;
     unitree_hg::msg::LowCmd low_command_interface_;       // Unitree hg lowcmd message
     unitree_hg::msg::LowCmd low_command_;                 // Unitree hg lowcmd message
