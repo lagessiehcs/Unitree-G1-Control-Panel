@@ -10,7 +10,7 @@
 
 using namespace std::chrono_literals;
 
-#define SAMPLING_TIME_MS 0
+#define SAMPLING_TIME_NS 500000
 #define MOTORS 29
 #define TIMEOUT_MS 50 // stop publishing if no message received for 100ms
 
@@ -30,7 +30,7 @@ public:
         lowcmd_publisher_ =
             this->create_publisher<unitree_hg::msg::LowCmd>("/lowcmd", 10);
 
-        timer_ = this->create_wall_timer(std::chrono::milliseconds(SAMPLING_TIME_MS),
+        timer_ = this->create_wall_timer(std::chrono::nanoseconds(SAMPLING_TIME_NS),
                                          [this]
                                          { timer_callback(); });
 
@@ -132,7 +132,7 @@ private:
     unitree_hg::msg::LowCmd low_command_;                 // Unitree hg lowcmd message
     std::chrono::steady_clock::time_point last_msg_time_; // last received message time
     std::array<int, MOTORS> prev_mode{};
-    float step_size = 0.001;
+    float step_size = 0.0005;
 };
 
 int main(int argc, char *argv[])
