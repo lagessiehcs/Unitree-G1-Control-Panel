@@ -17,9 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QDoubleSpinBox, QFormLayout,
     QFrame, QGridLayout, QHBoxLayout, QLabel,
-    QMainWindow, QProgressBar, QPushButton, QRadioButton,
-    QSizePolicy, QSpacerItem, QStatusBar, QVBoxLayout,
-    QWidget)
+    QMainWindow, QPushButton, QRadioButton, QSizePolicy,
+    QSpacerItem, QStatusBar, QVBoxLayout, QWidget)
 
 class Ui_G1ControlPanel(object):
     def setupUi(self, G1ControlPanel):
@@ -129,8 +128,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxLeftShoulderPitch.setMouseTracking(False)
         self.doubleSpinBoxLeftShoulderPitch.setReadOnly(False)
         self.doubleSpinBoxLeftShoulderPitch.setKeyboardTracking(False)
-        self.doubleSpinBoxLeftShoulderPitch.setMinimum(-177.000000000000000)
-        self.doubleSpinBoxLeftShoulderPitch.setMaximum(153.000000000000000)
+        self.doubleSpinBoxLeftShoulderPitch.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxLeftShoulderPitch.setMaximum(999.990000000000009)
 
         self.horizontalLayoutLeftShoulderPitch.addWidget(self.doubleSpinBoxLeftShoulderPitch)
 
@@ -162,8 +161,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxLeftShoulderRoll.setFont(font2)
         self.doubleSpinBoxLeftShoulderRoll.setReadOnly(False)
         self.doubleSpinBoxLeftShoulderRoll.setKeyboardTracking(False)
-        self.doubleSpinBoxLeftShoulderRoll.setMinimum(-91.000000000000000)
-        self.doubleSpinBoxLeftShoulderRoll.setMaximum(129.000000000000000)
+        self.doubleSpinBoxLeftShoulderRoll.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxLeftShoulderRoll.setMaximum(999.990000000000009)
 
         self.horizontalLayoutLeftShoulderRoll.addWidget(self.doubleSpinBoxLeftShoulderRoll)
 
@@ -195,8 +194,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxLeftShoulderYaw.setFont(font2)
         self.doubleSpinBoxLeftShoulderYaw.setReadOnly(False)
         self.doubleSpinBoxLeftShoulderYaw.setKeyboardTracking(False)
-        self.doubleSpinBoxLeftShoulderYaw.setMinimum(-150.000000000000000)
-        self.doubleSpinBoxLeftShoulderYaw.setMaximum(150.000000000000000)
+        self.doubleSpinBoxLeftShoulderYaw.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxLeftShoulderYaw.setMaximum(999.990000000000009)
 
         self.horizontalLayoutLeftShoulderYaw.addWidget(self.doubleSpinBoxLeftShoulderYaw)
 
@@ -248,8 +247,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxLeftElbowPitch.setFont(font2)
         self.doubleSpinBoxLeftElbowPitch.setReadOnly(False)
         self.doubleSpinBoxLeftElbowPitch.setKeyboardTracking(False)
-        self.doubleSpinBoxLeftElbowPitch.setMinimum(-60.000000000000000)
-        self.doubleSpinBoxLeftElbowPitch.setMaximum(120.000000000000000)
+        self.doubleSpinBoxLeftElbowPitch.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxLeftElbowPitch.setMaximum(999.990000000000009)
 
         self.horizontalLayoutLeftElbowPitch.addWidget(self.doubleSpinBoxLeftElbowPitch)
 
@@ -318,8 +317,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxLeftWristPitch.setFont(font3)
         self.doubleSpinBoxLeftWristPitch.setReadOnly(False)
         self.doubleSpinBoxLeftWristPitch.setKeyboardTracking(False)
-        self.doubleSpinBoxLeftWristPitch.setMinimum(-92.500000000000000)
-        self.doubleSpinBoxLeftWristPitch.setMaximum(92.500000000000000)
+        self.doubleSpinBoxLeftWristPitch.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxLeftWristPitch.setMaximum(999.990000000000009)
 
         self.horizontalLayoutLeftWristPitch.addWidget(self.doubleSpinBoxLeftWristPitch)
 
@@ -344,8 +343,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxLeftWristRoll.setFont(font2)
         self.doubleSpinBoxLeftWristRoll.setReadOnly(False)
         self.doubleSpinBoxLeftWristRoll.setKeyboardTracking(False)
-        self.doubleSpinBoxLeftWristRoll.setMinimum(-113.000000000000000)
-        self.doubleSpinBoxLeftWristRoll.setMaximum(113.000000000000000)
+        self.doubleSpinBoxLeftWristRoll.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxLeftWristRoll.setMaximum(999.990000000000009)
 
         self.horizontalLayoutLeftWristRoll.addWidget(self.doubleSpinBoxLeftWristRoll)
 
@@ -370,8 +369,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxLeftWristYaw.setFont(font2)
         self.doubleSpinBoxLeftWristYaw.setReadOnly(False)
         self.doubleSpinBoxLeftWristYaw.setKeyboardTracking(False)
-        self.doubleSpinBoxLeftWristYaw.setMinimum(-92.500000000000000)
-        self.doubleSpinBoxLeftWristYaw.setMaximum(92.500000000000000)
+        self.doubleSpinBoxLeftWristYaw.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxLeftWristYaw.setMaximum(999.990000000000009)
 
         self.horizontalLayoutLeftWristYaw.addWidget(self.doubleSpinBoxLeftWristYaw)
 
@@ -449,8 +448,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxRightShoulderPitch.setFont(font2)
         self.doubleSpinBoxRightShoulderPitch.setReadOnly(False)
         self.doubleSpinBoxRightShoulderPitch.setKeyboardTracking(False)
-        self.doubleSpinBoxRightShoulderPitch.setMinimum(-177.000000000000000)
-        self.doubleSpinBoxRightShoulderPitch.setMaximum(153.000000000000000)
+        self.doubleSpinBoxRightShoulderPitch.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxRightShoulderPitch.setMaximum(999.990000000000009)
 
         self.horizontalLayoutRightShoulderPitch.addWidget(self.doubleSpinBoxRightShoulderPitch)
 
@@ -475,8 +474,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxRightShoulderRoll.setFont(font2)
         self.doubleSpinBoxRightShoulderRoll.setReadOnly(False)
         self.doubleSpinBoxRightShoulderRoll.setKeyboardTracking(False)
-        self.doubleSpinBoxRightShoulderRoll.setMinimum(-129.000000000000000)
-        self.doubleSpinBoxRightShoulderRoll.setMaximum(91.000000000000000)
+        self.doubleSpinBoxRightShoulderRoll.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxRightShoulderRoll.setMaximum(999.990000000000009)
 
         self.horizontalLayoutRightShoulderRoll.addWidget(self.doubleSpinBoxRightShoulderRoll)
 
@@ -501,8 +500,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxRightShoulderYaw.setFont(font2)
         self.doubleSpinBoxRightShoulderYaw.setReadOnly(False)
         self.doubleSpinBoxRightShoulderYaw.setKeyboardTracking(False)
-        self.doubleSpinBoxRightShoulderYaw.setMinimum(-150.000000000000000)
-        self.doubleSpinBoxRightShoulderYaw.setMaximum(150.000000000000000)
+        self.doubleSpinBoxRightShoulderYaw.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxRightShoulderYaw.setMaximum(999.990000000000009)
 
         self.horizontalLayoutRightShoulderYaw.addWidget(self.doubleSpinBoxRightShoulderYaw)
 
@@ -554,8 +553,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxRightElbowPitch.setFont(font2)
         self.doubleSpinBoxRightElbowPitch.setReadOnly(False)
         self.doubleSpinBoxRightElbowPitch.setKeyboardTracking(False)
-        self.doubleSpinBoxRightElbowPitch.setMinimum(-60.000000000000000)
-        self.doubleSpinBoxRightElbowPitch.setMaximum(120.000000000000000)
+        self.doubleSpinBoxRightElbowPitch.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxRightElbowPitch.setMaximum(999.990000000000009)
 
         self.horizontalLayoutRightElbowPitch.addWidget(self.doubleSpinBoxRightElbowPitch)
 
@@ -620,8 +619,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxRightWristPitch.setFont(font2)
         self.doubleSpinBoxRightWristPitch.setReadOnly(False)
         self.doubleSpinBoxRightWristPitch.setKeyboardTracking(False)
-        self.doubleSpinBoxRightWristPitch.setMinimum(-92.500000000000000)
-        self.doubleSpinBoxRightWristPitch.setMaximum(92.500000000000000)
+        self.doubleSpinBoxRightWristPitch.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxRightWristPitch.setMaximum(999.990000000000009)
 
         self.horizontalLayoutRightWristPitch.addWidget(self.doubleSpinBoxRightWristPitch)
 
@@ -646,8 +645,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxRightWristRoll.setFont(font2)
         self.doubleSpinBoxRightWristRoll.setReadOnly(False)
         self.doubleSpinBoxRightWristRoll.setKeyboardTracking(False)
-        self.doubleSpinBoxRightWristRoll.setMinimum(-113.000000000000000)
-        self.doubleSpinBoxRightWristRoll.setMaximum(113.000000000000000)
+        self.doubleSpinBoxRightWristRoll.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxRightWristRoll.setMaximum(999.990000000000009)
 
         self.horizontalLayoutRightWristRoll.addWidget(self.doubleSpinBoxRightWristRoll)
 
@@ -672,8 +671,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxRightWristYaw.setFont(font2)
         self.doubleSpinBoxRightWristYaw.setReadOnly(False)
         self.doubleSpinBoxRightWristYaw.setKeyboardTracking(False)
-        self.doubleSpinBoxRightWristYaw.setMinimum(-92.500000000000000)
-        self.doubleSpinBoxRightWristYaw.setMaximum(92.500000000000000)
+        self.doubleSpinBoxRightWristYaw.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxRightWristYaw.setMaximum(999.990000000000009)
 
         self.horizontalLayoutRightWristYaw.addWidget(self.doubleSpinBoxRightWristYaw)
 
@@ -769,8 +768,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxWaistPitch.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.UpDownArrows)
         self.doubleSpinBoxWaistPitch.setAccelerated(False)
         self.doubleSpinBoxWaistPitch.setKeyboardTracking(False)
-        self.doubleSpinBoxWaistPitch.setMinimum(-29.789999999999999)
-        self.doubleSpinBoxWaistPitch.setMaximum(29.789999999999999)
+        self.doubleSpinBoxWaistPitch.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxWaistPitch.setMaximum(999.990000000000009)
 
         self.horizontalLayoutWaistPitch.addWidget(self.doubleSpinBoxWaistPitch)
 
@@ -802,8 +801,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxWaistRoll.setFont(font2)
         self.doubleSpinBoxWaistRoll.setReadOnly(False)
         self.doubleSpinBoxWaistRoll.setKeyboardTracking(False)
-        self.doubleSpinBoxWaistRoll.setMinimum(-29.789999999999999)
-        self.doubleSpinBoxWaistRoll.setMaximum(29.789999999999999)
+        self.doubleSpinBoxWaistRoll.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxWaistRoll.setMaximum(999.990000000000009)
 
         self.horizontalLayoutWaistRoll.addWidget(self.doubleSpinBoxWaistRoll)
 
@@ -835,8 +834,8 @@ class Ui_G1ControlPanel(object):
         self.doubleSpinBoxWaistYaw.setFont(font2)
         self.doubleSpinBoxWaistYaw.setReadOnly(False)
         self.doubleSpinBoxWaistYaw.setKeyboardTracking(False)
-        self.doubleSpinBoxWaistYaw.setMinimum(-150.000000000000000)
-        self.doubleSpinBoxWaistYaw.setMaximum(150.000000000000000)
+        self.doubleSpinBoxWaistYaw.setMinimum(-999.990000000000009)
+        self.doubleSpinBoxWaistYaw.setMaximum(999.990000000000009)
 
         self.horizontalLayoutWaistYaw.addWidget(self.doubleSpinBoxWaistYaw)
 
@@ -899,31 +898,6 @@ class Ui_G1ControlPanel(object):
 
 
         self.verticalLayoutWaistReadOnly.addLayout(self.horizontalLayout_4)
-
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(-1, 30, -1, -1)
-        self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_5.addItem(self.horizontalSpacer_14)
-
-        self.progressBar = QProgressBar(self.centralwidget)
-        self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setMinimumSize(QSize(60, 30))
-        self.progressBar.setMaximumSize(QSize(60, 30))
-        font5 = QFont()
-        font5.setPointSize(11)
-        self.progressBar.setFont(font5)
-        self.progressBar.setValue(0)
-
-        self.horizontalLayout_5.addWidget(self.progressBar)
-
-        self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_5.addItem(self.horizontalSpacer_13)
-
-
-        self.verticalLayoutWaistReadOnly.addLayout(self.horizontalLayout_5)
 
         self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 

@@ -10,7 +10,7 @@
 
 using namespace std::chrono_literals;
 
-#define SAMPLING_TIME_NS 500000
+#define SAMPLING_TIME_NS 0
 #define MOTORS 29
 #define TIMEOUT_MS 50 // stop publishing if no message received for 100ms
 
@@ -132,7 +132,7 @@ private:
     unitree_hg::msg::LowCmd low_command_;                 // Unitree hg lowcmd message
     std::chrono::steady_clock::time_point last_msg_time_; // last received message time
     std::array<int, MOTORS> prev_mode{};
-    float step_size = 0.0005;
+    float step_size = 0.000001;
 };
 
 int main(int argc, char *argv[])
