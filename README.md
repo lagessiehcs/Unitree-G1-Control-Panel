@@ -48,6 +48,13 @@ if [[ $- == *i* ]]; then
     # Define root directory (change this one if the root directory of unitree_ros2 is different)
     ROOT_DIR=~
 
+    # Save the original HOME
+    ORIG_HOME=$HOME
+    
+    # Set HOME to ROOT_DIR
+    export HOME=$ROOT_DIR
+    
+    # Run commands with new HOME
     echo "Select environment:"
     echo "    1: unitree ros2 environment"
     echo "    2: unitree ros2 simulation environment"
@@ -65,6 +72,9 @@ if [[ $- == *i* ]]; then
             source "$ROOT_DIR/unitree_ros2/setup_default.sh"
             ;;
     esac
+
+    # Restore original HOME
+    export HOME=$ORIG_HOME
 fi
 
 ```
