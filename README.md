@@ -75,6 +75,7 @@ if [[ $- == *i* ]]; then
             ;;
         2)
             source "$ROOT_DIR/unitree_ros2/setup_local.sh"
+            export ROS_DOMAIN_ID=1 # Modify the domain id to match the simulation
             ;;
         *)
             source "$ROOT_DIR/unitree_ros2/setup_default.sh"
