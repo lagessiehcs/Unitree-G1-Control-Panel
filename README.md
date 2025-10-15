@@ -43,7 +43,11 @@ If you are using a ROS 2 distribution other than Foxy, you will need to update t
 
 (Optional) To make it easier to select the appropriate setup file, you can add the following snippet to your ~/.bashrc:
 ```bash
-if [[ $- == *i* ]]; then   # only in interactive shells
+# Only run this in interactive shells
+if [[ $- == *i* ]]; then
+    # Define root directory (change this one if the root directory of unitree_ros2 is different)
+    ROOT_DIR=~
+
     echo "Select environment:"
     echo "    1: unitree ros2 environment"
     echo "    2: unitree ros2 simulation environment"
@@ -52,13 +56,13 @@ if [[ $- == *i* ]]; then   # only in interactive shells
 
     case $choice in
         1)
-            source ~/unitree_ros2/setup.sh
+            source "$ROOT_DIR/unitree_ros2/setup.sh"
             ;;
         2)
-            source ~/unitree_ros2/setup_local.sh
+            source "$ROOT_DIR/unitree_ros2/setup_local.sh"
             ;;
         *)
-            source ~/unitree_ros2/setup_default.sh
+            source "$ROOT_DIR/unitree_ros2/setup_default.sh"
             ;;
     esac
 fi
