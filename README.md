@@ -6,6 +6,14 @@
 The Unitree G1 Control Panel requires a ROS 2 environment along with the Unitree ROS 2 package, which provides the necessary ROS 2 interfaces.
 For details on supported ROS 2 distributions and instructions for installing the package, see the **System Requirements** and **Install Unitree ROS2 Package** subsections in the **Configuration** section of the [Unitree ROS2 package's README](https://github.com/unitreerobotics/unitree_ros2/blob/master/README.md)
 
+### Install Dependencies
+````
+pip install PySide6
+sudo apt update
+sudo apt install libxcb-cursor0
+sudo apt install libgl1-mesa-glx
+````
+
 ### Setup Environment
 Open setup.sh file.
 ```bash
@@ -78,13 +86,6 @@ if [[ $- == *i* ]]; then
 fi
 
 ```
-### Install Dependencies
-````
-pip install PySide6
-sudo apt update
-sudo apt install libxcb-cursor0
-sudo apt install libgl1-mesa-glx
-````
 
 ## Run
 ````
