@@ -12,7 +12,7 @@ pip install PySide6
 pip install PyYAML
 sudo apt update
 sudo apt install libxcb-cursor0
-sudo apt install libgl1-mesa-glx
+pip install numpy
 ````
 
 ### Setup Environment
