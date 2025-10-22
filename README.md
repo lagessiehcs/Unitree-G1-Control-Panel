@@ -102,17 +102,26 @@ source install/setup.bash
 ````
 
 ## Run
-### Run the python code directly (no build required)
+You can run the Control Panel directly with Python (no build required) or through ROS 2 (requires a colcon build).
+### Option 1: Run Directly (No Build Required)
+Use this method for quick testing or development.
 ````
 cd src/py_control_panel_package/py_control_panel_package/
 python3 main_window.py
 ````
-### Run with ros2 commands (colcon build required)
-Run the python package
+### Option 2: Run with ROS 2 (Requires Build)
+First, make sure the workspace has been built with colcon:
+````
+colcon build
+source install/setup.bash
+````
+Then, run the Python package using ROS 2:
 ````
 ros2 run py_control_panel_package control_panel
 ````
-A C++ interface layer can be added for stricter real time requirements. Launch the python package and the C++ interface package:
+### Option 3: Run with C++ Interface (for Real-Time Performance)
+If your system requires stricter real-time control, you can use a C++ interface layer alongside the Python package.
+Launch both the Python control panel and the C++ interface package with a single command:
 ````
 ros2 launch py_control_panel_package control_panel_launch.py
 ````
