@@ -88,9 +88,31 @@ if [[ $- == *i* ]]; then
 fi
 
 ```
+## Build 
+Generate python code for the control panel:
+````
+cd src/py_control_panel_package/py_control_panel_package/
+pyside6-uic G1ControlPanel.ui -o g1_control_panel.py
+````
+
+In the root directory:
+````
+colcon build
+source install/setup.bash
+````
 
 ## Run
+### Run the python code directly (no build required)
 ````
-pyside6-uic G1ControlPanel.ui -o G1ControlPanel.py
-python3 main.py
+cd src/py_control_panel_package/py_control_panel_package/
+python3 main_window.py
+````
+### Run with ros2 commands (colcon build required)
+Run the python package
+````
+ros2 run py_control_panel_package control_panel
+````
+A C++ interface layer can be added for stricter real time requirements. Launch the python package and the C++ interface package:
+````
+ros2 launch py_control_panel_package control_panel_launch.py
 ````
