@@ -41,6 +41,10 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.radioButtonLegs.toggled.connect(self.toggleLegs)
         self.radioButtonWaist.toggled.connect(self.toggleWaist)
 
+        self.toolButtonArms.clicked.connect(self.toggleVisibilityArms)
+        self.toolButtonLegs.clicked.connect(self.toggleVisibilityLegs)
+        self.toolButtonWaist.clicked.connect(self.toggleVisibilityWaist)
+
         self.pushButtonOn.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', True))
         self.pushButtonOff.clicked.connect(lambda: self.setEnableddoubleSpinBoxes('all', False))
 
@@ -213,7 +217,19 @@ class MainWindow(QMainWindow, Ui_G1ControlPanel):
         self.setEnableddoubleSpinBoxes('leg', checked)
     
     def toggleWaist(self, checked):
-        self.setEnableddoubleSpinBoxes('waist', checked)      
+        self.setEnableddoubleSpinBoxes('waist', checked)   
+
+    def toggleVisibilityArms(self, checked):
+        self.toolButtonArms.setArrowType(Qt.ArrowType.DownArrow if checked else Qt.ArrowType.RightArrow)
+        self.frameArms.setVisible(checked)   
+
+    def toggleVisibilityLegs(self, checked):
+        self.toolButtonLegs.setArrowType(Qt.ArrowType.DownArrow if checked else Qt.ArrowType.RightArrow)
+        self.frameLegs.setVisible(checked) 
+
+    def toggleVisibilityWaist(self, checked):
+        self.toolButtonWaist.setArrowType(Qt.ArrowType.DownArrow if checked else Qt.ArrowType.RightArrow)
+        self.frameWaist.setVisible(checked)   
 
     def doubleSpinBox_changed(self, value, idx):
         with self.lock:
